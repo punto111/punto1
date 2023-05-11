@@ -1,0 +1,33 @@
+<!--
+ * @Author: wyf 1017618540@qq.com
+ * @Date: 2023-05-11 16:54:51
+ * @LastEditors: wyf 1017618540@qq.com
+ * @LastEditTime: 2023-05-11 16:55:56
+ * @FilePath: \my-app\src\练习.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <button id="toggle">提交</button>
+    <script>
+        const $el = document.getElementById('toggle')
+        $el.addEventListener('click', (e) => {
+          e.preventDefault()
+          location.hash = '#' + Math.floor(Math.random() * 1000000)
+        })
+        
+        window.addEventListener('hashchange', (e) => {
+          const { oldURL, newURL } = e
+          console.log(oldURL, newURL)
+        })
+        </script>
+</body>
+</html>
